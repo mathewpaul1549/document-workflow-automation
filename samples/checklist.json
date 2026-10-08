@@ -1,0 +1,12 @@
+{"id":"operations-policy","version":1,"rules":[
+{"id":"id-required","field":"document_id","type":"required","severity":"error","message":"A document identifier is required."},
+{"id":"owner-required","field":"owner","type":"required","severity":"error","message":"Assign an accountable document owner."},
+{"id":"version-required","field":"version","type":"required","severity":"error","message":"A document version is required."},
+{"id":"version-format","field":"version","type":"pattern","pattern":"[0-9]+\\.[0-9]+","severity":"error","message":"Use a major.minor version such as 1.0."},
+{"id":"effective-required","field":"effective_date","type":"required","severity":"error","message":"An effective date is required."},
+{"id":"effective-valid","field":"effective_date","type":"date","severity":"error","message":"Effective date must be ISO YYYY-MM-DD."},
+{"id":"review-required","field":"review_date","type":"required","severity":"warning","message":"A scheduled review date is recommended."},
+{"id":"review-valid","field":"review_date","type":"date","severity":"error","message":"Review date must be ISO YYYY-MM-DD."},
+{"id":"approval-required","field":"approval","type":"required","severity":"error","message":"Document approval status is required."},
+{"id":"approval-value","field":"approval","type":"enum","values":["signed"],"severity":"error","message":"Document approval must be signed."}
+]}

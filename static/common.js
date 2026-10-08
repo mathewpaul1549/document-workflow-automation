@@ -1,0 +1,3 @@
+const $=s=>document.querySelector(s); const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function api(url,body,extra={}){const r=await fetch(url,{method:body===undefined?'GET':'POST',headers:{'Content-Type':'application/json',...extra},...(body===undefined?{}:{body:JSON.stringify(body)})});const data=await r.json();if(!r.ok)throw new Error(data.error||`Request failed: ${r.status}`);return data;}
+async function act(fn){$('#message').textContent='';try{await fn()}catch(e){$('#message').className='error';$('#message').textContent=e.message;}}

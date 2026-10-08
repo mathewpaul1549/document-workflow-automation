@@ -1,0 +1,84 @@
+{
+  "run_utc": "2026-10-08T12:08:58.630115+00:00",
+  "python": "3.14.6",
+  "dataset": "8 seeded metadata documents; checklist operations-policy v1",
+  "true_positives": 8,
+  "false_positives": 0,
+  "false_negatives": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "p50_ms": 0.01,
+  "cases": [
+    {
+      "case": "valid",
+      "expected": [],
+      "actual": []
+    },
+    {
+      "case": "owner missing",
+      "expected": [
+        "owner-required"
+      ],
+      "actual": [
+        "owner-required"
+      ]
+    },
+    {
+      "case": "bad version",
+      "expected": [
+        "version-format"
+      ],
+      "actual": [
+        "version-format"
+      ]
+    },
+    {
+      "case": "bad date",
+      "expected": [
+        "effective-valid"
+      ],
+      "actual": [
+        "effective-valid"
+      ]
+    },
+    {
+      "case": "pending approval",
+      "expected": [
+        "approval-value"
+      ],
+      "actual": [
+        "approval-value"
+      ]
+    },
+    {
+      "case": "review before effective",
+      "expected": [
+        "date-order"
+      ],
+      "actual": [
+        "date-order"
+      ]
+    },
+    {
+      "case": "missing review",
+      "expected": [
+        "review-required"
+      ],
+      "actual": [
+        "review-required"
+      ]
+    },
+    {
+      "case": "two errors",
+      "expected": [
+        "approval-value",
+        "owner-required"
+      ],
+      "actual": [
+        "approval-value",
+        "owner-required"
+      ]
+    }
+  ],
+  "limitations": "Deterministic synthetic checklist regression, not legal compliance accuracy or extraction quality."
+}
